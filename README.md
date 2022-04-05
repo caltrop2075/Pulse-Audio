@@ -1,80 +1,54 @@
-# Pulse-Audio
-some PA utilities I've coded
-this project gave me insight into PA config
+an easy way to change your Pulse Audio Sound Settings
 
-my first venture into GitHub
+I gew tired of pecking thru the GUI
+I gew tired of the complicated pactl listing & changing sink numbers
+so I wrote a script
 
-I am just starting this project on my phone
-I will have to get back to the Library
-to upload the code
+I started with a Terminal version the found Zenity
+if you don't have Zenity, install it
 
-------------------------------------------
-pactl-z.sh
-allows you to easily switch outputs
-Speakers, HDMI, Headphones
+put these scripts in '~/bin' or '~/.local/bin' to hide them
+make sure you have '~/data' or edit 'title-80.sh'
+you can add 'pactl-z.sh' to a key shortcut or launcher button, I use both
 
-Headphones is fairly automatic but...
+I have paths to '~/bin' & '~/.local/bin'
+put your user name in $USER below
+no you don't have to use './script' but just 'script'
 
-how I use this:
-my 2 or 3 monitor system
-   Laptop Speakers
-   External HDMI Monitor
-   VGA TV (yeah, oldschool) Headphones
-      do not always use this
-Library Trips or other Public WiFi
-   always switching Speakers & HDMI
-   this was why this was created
-I added a launcher for this in a panel
-   you can add wherever
-   3 clicks and you are done
-   no more trolling the GUI config
+PATH="/home/$USER/.local/bin:/home/$USER/bin:/home/$USER/plot:/usr/bin:/usr/games:/usr/sbin:/usr/local/bin:/usr/local/games:/usr/local/sbin"
 
-right now you have to manually edit your sound
-I plan on making this automatic
+feel free to modify what you like
+you will explore Terminal Menus, Zenity Dialogs, & AWK!
+you will learn to use NAMES with PACTL, not numbers (which can change)
 
-maybe I will do an X-Win program
-instead of using zenity
+I really like AWK!
+ENJOY!
+Liz
 
-------------------------------------------
-lspactl.sh
-list your sound system
-only the essential info
+--------------------------------------------------------------------------------
+files
 
-------------------------------------------
-support scripts & programs
+this document
+   pactl
 
-title-80.sh
-80 column outlined text
+list pactl
+   lspactl.sh        main script, uses title-80.sh
+   lspactl.awk       sorts out the mess of pactl
 
-title.sh
-outline your text
-many options
-I use this as lot
+change pactl settings using zenity - my favorite
+   pactl-z.sh        main zenity script, multi-monitor selective for test
+   pactl-o.sh        display utility used by pactl-z.sh
+   pactl-o.awk       used by pactl-o.sh
 
-pactl.awk
-beautify pactl list cards
+change pactl settings using terminal - how it started
+   pactl.sh          main script, uses title-80.sh
+   pactl.awk         display utility
 
-zenity
-you might have to install this
+display utility
+   title-80.sh       used by pactl.sh & lspactl.sh
 
-------------------------------------------
-directories you will need
-
-for pactl-z.sh you will not need this
-but lspactl.sh & others...
-
-~/bin
-where you put this stuff
-I have my $PATH set to this
-no more
-   $ ./bin/script
-just
-   $ script
-
-~/temp
-temp, temp.txt, you know, temporary stuff
-
-~/data
-title.dat, used by title.sh
-I store my script output here
-
+sound test
+   thx.sh            video test used by pactl.sh & pactl-z.sh
+                     you will need to modify this to whatever video test you use
+                     and you need mplayer
+                     or just delete this line in the above scripts
