@@ -44,11 +44,16 @@ change pactl settings using terminal - how it started
    pactl.sh          main script, uses title-80.sh
    pactl.awk         display utility
 
+
+
+don't really need the following, you will have to remove in scripts
+
 display utility
    title-80.sh       used by pactl.sh & lspactl.sh
+   title.sh          used by title-80.sh, needs ~/data/title.dat
+   title.awk         formatter for title.sh
 
 sound test
    thx.sh            video test used by pactl.sh & pactl-z.sh
                      you will need to modify this to whatever video test you use
-                     and you need mplayer
-                     or just delete this line in the above scripts
+                     and you need 'mplayer'
