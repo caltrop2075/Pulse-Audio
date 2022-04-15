@@ -54,7 +54,15 @@ case $e in                    # process zenity results
             "Speaker")
                pactl set-card-profile $crd1 $int
                pactl set-sink-port $snk1 $prt1
-               x=322;y=501
+               x=322
+               xrandr.sh > /dev/null  # get display config: 1 int, 2 hdmi, 3 vga
+               e=$?
+               if ((e==1))
+               then
+                  y=189
+               else
+                  y=501
+               fi
                ;;
             "HDMI")
                pactl set-card-profile $crd1 $ext

@@ -57,3 +57,7 @@ sound test
    thx.sh            video test used by pactl.sh & pactl-z.sh
                      you will need to modify this to whatever video test you use
                      and you need 'mplayer'
+
+video test
+   xrandr.sh         test connected monitors, return error $?
+   xrandr.awk        1=internal, 2=hdmi, 3=tv
