@@ -15,6 +15,14 @@ fi
 echo -n > ~/data/title.dat                         # reset title file
 
 wid=80
+if (( $# > 1 ))
+then
+   case $2 in
+      "c" | "c+" | "c-" | "c=" | "c/" | "c/-" | "c/=" | "block1" | "block2" | "block3" | "block4" | "wide" )
+         wid=78 ;;
+   esac
+fi
+
 echo -e $msg |
 while read lin                                     # format text to title file
 do

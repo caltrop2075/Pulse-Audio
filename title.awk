@@ -61,21 +61,44 @@ BEGIN {
          lm="#";       rm="#"
          lb="#";mb="=";rb="#"
          break
-      case "block" :                      # lines
-         lt="▒▒";mt="▒";rt="▒▒"
-         lm="▒▒";       rm="▒▒"
-         lb="▒▒";mb="▒";rb="▒▒"
+      case "block1" :                      # block
+         lt="░░";mt="░";rt=lt
+         lm=lt;       rm=lt
+         lb=lt;mb=mt;rb=lt
+         break
+      case "block2" :
+         lt="▒▒";mt="▒";rt=lt
+         lm=lt;       rm=lt
+         lb=lt;mb=mt;rb=lt
+         break
+      case "block3" :
+         lt="▓▓";mt="▓";rt=lt
+         lm=lt;       rm=lt
+         lb=lt;mb=mt;rb=lt
+         break
+      case "block4" :
+         lt="██";mt="█";rt=lt
+         lm=lt;       rm=lt
+         lb=lt;mb=mt;rb=lt
+         break
+      case "wide" :                       # wide line
+         lt="▐▛";mt="▀";rt="▜▌"
+         lm="▐▌";       rm="▐▌"
+         lb="▐▙";mb="▄";rb="▟▌"
          break
       case "line" :
-         lt="┌";mt="─";rt="┐"
+         lt="┌";mt="─";rt="┐"             # line
          lm="│";       rm="│"
          lb="└";mb="─";rb="┘"
          break
-      case "double" :                     # misc
-         lt=" =";mt="=";rt="="
-         lm="||";       rm="||"
-         lb=" =";mb="=";rb="="
+      case "double" :                     # double line
+         lt="╔";mt="═";rt="╗"
+         lm="║";       rm="║"
+         lb="╚";mb="═";rb="╝"
          break
+#         lt=" =";mt="=";rt="="
+#         lm="||";       rm="||"
+#         lb=" =";mb="=";rb="="
       default :
          lt="+";mt="-";rt="+"
          lm="|";       rm="|"
