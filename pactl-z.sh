@@ -78,7 +78,7 @@ case $e in                    # process zenity results
          pactl set-sink-volume $snk1 $lvl% 2> /dev/null
          pactl set-sink-volume $snk2 $lvl% 2> /dev/null
          # test video
-         mplayer -quiet -noborder /home/caltrop/.videos/THX.mp4 > /dev/null 2>&1 &
+         mplayer -quiet -noborder /home/caltrop/.videos/THX.mp4 &> /dev/null &
          # move to monitor associated with output
          sleep 0.5
          wmctrl -Fr "MPlayer" -e 0,$x,$y,-1,-1

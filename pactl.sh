@@ -23,7 +23,7 @@ snk1="alsa_output${crd1#alsa_card}.analog-stereo"
 snk2="alsa_output${crd1#alsa_card}.hdmi-stereo"
 
 # dialog
-title-80.sh "Pulse Audio Select"
+title-80.sh -t line "Pulse Audio Select"
 PS3="? "
 select opt in "exit" "speaker" "headphone" "hdmi"
 do
